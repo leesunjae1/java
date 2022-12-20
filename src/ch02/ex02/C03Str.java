@@ -8,8 +8,8 @@ public class C03Str {
 		int sum = a + b + c;
 		System.out.printf("sum: %d\n", sum);
 		
-		String sumStr = "" + sum;
+		String sumStr = "" + sum; //문자를숫자로 바꿀 때 쓰는 알고리즘
 		System.out.println(sumStr);
+		
 	}
-
 }
