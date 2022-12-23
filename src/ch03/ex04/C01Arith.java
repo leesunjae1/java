@@ -9,7 +9,7 @@ public class C01Arith {
 		byte c = (byte)(a + b);
 		System.out.println(c);
 		
-		c++; // c = c + 1;
+		c++; // c = c(byte) + 1(int);
 		System.out.println(c);
 		
 		double d = a / b;

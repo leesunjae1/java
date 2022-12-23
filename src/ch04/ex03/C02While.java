@@ -1,0 +1,15 @@
+package ch04.ex03;
+
+public class C02While {
+	public static void main(String[] args) {
+		int random = 1;
+		int pickCnt = 0;
+		//3의 배수를 뽑을 때까지 제비뽑기를 한다.
+		while(random % 3 !=0) {
+			random = (int)(Math.random() * 100) + 1;
+			pickCnt++;
+		}
+		
+		System.out.printf("%d회를 뽑아서, %d를찾았습니다.", pickCnt, random);
+	}
+}

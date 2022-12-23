@@ -6,7 +6,7 @@ public class C05Grade {
 		char grade = 0;
 		
 		if(score >= 90) grade = 'A';
-		else if(score >=80) grade = 'B';
+		else if(score >= 80) grade = 'B';
 		else grade = 'C';
 		
 		System.out.println(grade);

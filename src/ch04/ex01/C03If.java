@@ -22,7 +22,6 @@ public class C03If {
 		else if(hour < 21) bow = "Good evening";
 		else bow = "Good night";
 		System.out.println(bow);
-	
 		}
 	}
 

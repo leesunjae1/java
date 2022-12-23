@@ -5,8 +5,8 @@ public class C01Ternary {
 		int x = 1;
 		int y = -1;
 		
-		int absX = (x >=0) ? x: -x;
-		int absY = (x >=0) ? x: -y;
+		int absX = (x >=0) ? x : -x;
+		int absY = (x >=0) ? x : -y;
 		
 		System.out.println(absX + "," + absY);
 	}

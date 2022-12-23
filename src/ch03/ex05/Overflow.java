@@ -15,9 +15,7 @@ public class Overflow {
 		System.out.println(c);
 		
 		int x = a * b / a;
-		x = a / b * a;
+		x = a / b * a;  //나누기를 먼저한다 오버플로우를 막기위해서
 		System.out.println(x);
 	}
-	
-
 }
