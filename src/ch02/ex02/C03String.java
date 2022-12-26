@@ -11,6 +11,8 @@ public class C03String {
 		String sumStr = "" + sum; //문자를숫자로 바꿀 때 쓰는 알고리즘
 		System.out.println(sumStr);	
 		
+		int i = Integer.parseInt(sumStr);
+		
 		String s = a + b + "";
 		System.out.println(s);
 		

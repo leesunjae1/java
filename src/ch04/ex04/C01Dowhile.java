@@ -16,8 +16,8 @@ public class C01Dowhile {
 			System.out.print("b: ");
 			b= sc.nextInt();
 			
-			System.out.printf("%d + %d = %d\n\n", a, b, result = a + b);
+			System.out.printf("%d + %d = %d\n", a, b, result = a + b);
 		} while(result != 0);
 	}
 }
-// dowhile은 1회이상 반복할떄 쓴다 조건문이 뒤에 있어서 가능하다
+// dowhile은 1회이상 반복할때 쓴다 조건문이 뒤에 있어서 가능하다

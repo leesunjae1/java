@@ -17,7 +17,7 @@ public class H05Kawibawibo {
 		if(1 <= playerchoice && playerchoice <= 3) {
 			result = switch(playerchoice - appchoice) {
 			case -2, 1 -> "you win.";
-			case -1, 2 -> "you lose.";
+			case -1, 2 -> "Me lose.";
 			default -> "fair";
 			};
 			
