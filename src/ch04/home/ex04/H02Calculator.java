@@ -51,10 +51,6 @@ public class H02Calculator {
 		} while(sc.nextLine(). equalsIgnoreCase("y"));
 		
 		System.out.println("end.");
-		
-		
-	
-	
 	}
 }
 
