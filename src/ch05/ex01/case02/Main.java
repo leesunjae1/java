@@ -10,5 +10,6 @@ public class Main {
 		User user = new User();		
 		user.userName = "최한석";
 		user.age = 35;
+		// 유저 한명이란걸 알 수 있다.
 	}
 }

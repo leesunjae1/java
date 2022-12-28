@@ -5,27 +5,49 @@ import java.util.Scanner;
 
 public class Main {
 	public static void main(String[] args) {
-	Scanner sc = new Scanner(System.in);
-		User user = new User();
-		LocalDate date = LocalDate.now();
+		String userName = "";
+		int age = 0;
+		LocalDate regDate = null;
 		
+		Scanner sc = new Scanner(System.in);
+		String tmp = "";
+		boolean isgood = false;
+		
+
+		do {
 		System.out.print("이름: ");
-		user.setUserName(sc.nextLine());
-		
+		userName = sc.nextLine();
+		isgood = userName.matches("[a-zA-A가-힣]+");
+		if(!isgood) System.out.println("이름");
+		}while(!isgood);
+	
+		do {
+			isgood = false;
 		System.out.print("나이: ");
-		user.setAge(sc.nextInt());
-		System.out.println();
+		tmp = sc.nextLine();
+		isgood = tmp.matches("[0-9]+");
+		if(isgood) age = Integer.parseInt(tmp);
+		else System.out.println("나이");
+		}while(!isgood);
 		
-		System.out.printf("이름: %s\n", user.getUserName());
-		System.out.printf("나이: %s\n", user.getAge());
-		System.out.println(date);
+		regDate = LocalDate.now();
+		
+		User user = new User();
+		user.setUserName(userName);
+		user.setAge(age);
+		user.setRegDate(regDate);
+		
+		System.out.printf("\n이름: %s\n나이: %d\n가입일: %s",
+				user.getUserName(), user.getAge(), user.getRegDate());
+
+
   }
 }
 
 /*
 사용자를 생성하라
-user가 user의 이름, 나이를 입력한다.
-app이 user의 가입일을 입력한다
+user가 user의 이름, 나이를 수동 입력한다.
+app이 user의 가입일을 자동입력한다
 --
 
 이름 : gambit

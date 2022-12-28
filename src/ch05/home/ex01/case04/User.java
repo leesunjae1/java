@@ -1,32 +1,30 @@
 package ch05.home.ex01.case04;
 
+import java.time.LocalDate;
+
 public class User {
 	private String userName;
 	private int age;
-	private String joinDate;
-
+	private LocalDate regDate;
+	
+	public String getUserName() {
+		return userName;
+	}
 	public void setUserName(String userName) {
 		this.userName = userName;
 	}
-	
-	public void setAge(int i) {
-		this.age = i;
-	}
-	
-	public void setUserDate(String userDate) {
-		this.joinDate = userDate;
-	}
-	
-	public String getUserName() {
-		return this.userName;
-	}
-	
 	public int getAge() {
-		return this.age; 
+		return age;
+	}
+	public void setAge(int age) {
+		this.age = age;
+	}
+	public LocalDate getRegDate() {
+		return regDate;
+	}
+	public void setRegDate(LocalDate regDate) {
+		this.regDate = regDate;
 	}
 	
-	public String getUserDate() {
-		return this.joinDate;
-	}
-	
+
 }

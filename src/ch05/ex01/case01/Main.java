@@ -20,6 +20,6 @@ public class Main {
 		System.out.printf("%d시 %d분 %d초\n", time2.hour, time2.minute, time2.second);
 		
 		System.out.println(time); //해시코드가 나오는데 대체주소이다
-		System.out.println(time2.toString());
-	}
+		System.out.println(time2.toString()); //모든 객체는 toString이 있다
+	}                       
 }

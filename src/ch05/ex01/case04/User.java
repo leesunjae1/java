@@ -9,7 +9,8 @@ public class User {
 		if(familyName == '최')
 			this.userName = userName;
 		else this.userName = "누구세요?";
-		
+	}
+	
 		public String getUserName() {
 			return this.userName;
 			

@@ -1,7 +1,7 @@
 package ch05.ex01.case03;
 
 public class User {
-	private String userName; 
+	private String userName; //encapsulation 캡슐화, 캡슐로 둘러쌓다
 	private int age;
 	
 	public void setUserName(String userName) {   //리턴값이 없다를 void로 표현한다
@@ -18,9 +18,10 @@ public class User {
 	
 	public int getAge() {
 		return this.age; 
-		//위 명령문들을 accessor 라고 하낟
+		//위 명령문들을 accessor(접근자) 라고 한다
 	}
 }
 
 
-// this는 user타입의 객체가 담긴다. 그러므로 this의 타입은 user이다. 
+// this는 user타입의 객체가 담긴다. 그러므로 this의 타입은 user이다.
+
