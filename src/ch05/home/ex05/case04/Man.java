@@ -1,9 +1,11 @@
 package ch05.home.ex05.case04;
 
+import java.time.LocalDate;
+
 public class Man {
 	private String manName;
 	private int age;
-	private int birthDay;
+	private LocalDate birthday;
 	
 	public void sing() {}
 	public void eat() {}
@@ -18,7 +20,7 @@ public class Man {
 		
 	}
 	
-	public void setBirthDay(int birthDay) {
-		this.birthDay = birthDay;
+	public void setBirthday(LocalDate birthday) {
+		this.birthday= birthday;
 	}
 }

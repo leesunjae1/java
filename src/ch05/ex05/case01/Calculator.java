@@ -5,7 +5,7 @@ public class Calculator {
 		return a + b;
 	}
 	/*
-	public int add(int x, int y) {  //  add메서드 안에 int,int 중복이된다
+	public int add(int x, int y) {  //  add메서드 안에 데이터 타입int,int 중복이된다
 		return x + y;
 	}
 	*/

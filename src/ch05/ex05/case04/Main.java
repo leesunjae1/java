@@ -1,6 +1,6 @@
 package ch05.ex05.case04;
 
-public class Name {
+public class Main {
 	public static void main(String[] args) {
 		Dog dog = new Dog();
 		
