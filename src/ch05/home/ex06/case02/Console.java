@@ -4,8 +4,6 @@ import java.util.Scanner;
 
 public class Console {
 	
-	static boolean isgood = false;
-	String tmp = "";
 	private static Scanner sc;
 	
 	static {
@@ -17,20 +15,31 @@ public class Console {
 	}	
 		
 	public static String inStr(String msg) {
+		String input = "";
+		boolean isgood = false;
+		
 		do {
 			Console.inMsg(msg);
-			msg = sc.nextLine().trim();
+			input = sc.nextLine();
+			isgood = input.matches("[a-zA-Z가-힣]+");
+			if(!isgood) Console.err("문자가 아닙니다");
+		}while(!isgood);
 		
-			isgood = msg.matches("[0-9]+");
-			if(!isgood) System.out.println("문자가아닙니다.");
-			}while(!isgood);
-		
+		return input;	
 	}
 		
 	public static int inNum(String msg) {
-		Console.inMsg(msg);
-		int num = sc.nextInt(); sc.nextLine();
-		return num;
+		String input = "";
+		boolean isgood = false;
+		
+		do {
+			Console.inMsg(msg);
+			input = sc.nextLine(); // ^ ~시작 * ~끝 표시 
+			isgood = input.matches("^[1-9][0-9]*"); //10의자리[1-9] 1의자리[0-9] 표시
+			if(!isgood) Console.err("자연수가 아닙니다.");
+		}while(!isgood);
+	
+		return Integer.parseInt(input);
 	}
 	
 	public static void info(String msg) {
