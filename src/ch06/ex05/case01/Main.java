@@ -4,6 +4,6 @@ public class Main {
 	public static void main(String[] args) {
 		Shoes shoes = new Shoes(10000);
 		
-		System.out.println(shoes.getPrice());
+		System.out.println(shoes.price);
 	}
 }
