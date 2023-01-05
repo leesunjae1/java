@@ -14,6 +14,7 @@ public class Main {
 		UserIo userIo = new UserIo(userService);
 		
 		Console.info("start.");
-	}	userIo.play();
+		userIo.play();
 		Console.info("end.");
+	}	
 }

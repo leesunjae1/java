@@ -21,12 +21,12 @@ public class UserServiceImpl implements UserService{
 	}
 	
 	@Override
-	public void fixUser(User user) {
-		userDao.updateUser(user);
+	public void fixUser(String userName) {
+		userDao.updateUser(userName);
 	}
 	
-	@Overrida
-	public void delUser(User user) {
-		userDao.deleteUser(user);
+	@Override
+	public void delUser() {
+		userDao.deleteUser();
 	}
 }
