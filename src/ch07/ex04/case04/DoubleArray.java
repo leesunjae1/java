@@ -13,11 +13,11 @@ public class DoubleArray {
 		System.out.println("번호 국어 영어 수학 합계 평균");
 		System.out.println("-----------------------------");
 		
-		for(int i = 0; i < scores.length; i++) {
+		for(int i = 0; i < scores.length; i++) { //로우를 가르킴
 			int sum = 0;
 			
 			System.out.print(" " + (i + 1) + " ");
-			for(int j = 0; j < scores[0].length; j++) {
+			for(int j = 0; j < scores[0].length; j++) { 
 				sum += scores[i][j];
 				System.out.printf("%5d", scores[i][j]);
 			}
