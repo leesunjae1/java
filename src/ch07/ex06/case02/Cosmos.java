@@ -5,9 +5,8 @@ public class Cosmos {
 		return switch(animalName) {
 		case "호랑이" -> new Tiger();
 		case "매" -> new Falcon();
-		defult null;
+		default  null;
+		
 		}
-		
-		
 	}
 }
