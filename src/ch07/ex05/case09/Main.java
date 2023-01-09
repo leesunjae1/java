@@ -25,5 +25,6 @@ public class Main {
 		msg = "";
 		// if(f instanceof C)
 		if(f instanceof A) msg += "A ";
+		System.out.println(msg);
 	}
 }
