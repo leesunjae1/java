@@ -2,10 +2,10 @@ package ch08.ex02.case05;
 
 public class User {
 	private String userName;
-	privatr Level level;
+	private Level level;
 	
 	public User(String userName, Level level) {
-		this.userName = userNmae;
+		this.userName = userName;
 		this.level = level;
 	}
 	
