@@ -20,7 +20,7 @@ public @interface Type {
 
 @Retention(RetentionPolicy.RUNTIME)
 @Target(ElementType.CONSTRUCTOR)
-@interface Constructor{
+@interface Constructor {
 	int value() default 0;
 }
 
@@ -47,4 +47,5 @@ public @interface Type {
 	
 
 @Target({ElementType.TYPE, ElementType.FIELD})
-@interface
+@interface Universal {	
+}

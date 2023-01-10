@@ -15,5 +15,5 @@ public class ForEach {
 		list.forEach(x -> {
 				if(x % 2 == 0) System.out.print(x);
 		});
-	}
+	} 
 }
