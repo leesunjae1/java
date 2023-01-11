@@ -7,7 +7,24 @@ public class Buffer {
 		while(val == null) {
 			try {
 				wait();
-			}
+			} catch(InterruptedException e) {}
+		}
+		
+		int val = this.val;
+		this.val = null;
+		notifyAll();
+		
+		return val;
+	}
+	
+	public synchronized void add(Integer val) {
+		while(this.val != null) {
+			try {
+				wait();
+			} catch(InterruptedException e) {}
+		}
+		
+			this.val = val;
+			notifyAll();
 		}
 	}
-}
