@@ -1,9 +1,11 @@
 package com.my.hr.service;
 
+import java.util.List;
+
 import com.my.hr.dao.WorkerDao;
 import com.my.hr.domain.Worker;
 
-public class WorkerServiceImpl implements WorkerService{
+public class WorkerServiceImpl implements WorkerService {
 	private WorkerDao workerDao;
 	
 	public WorkerServiceImpl(WorkerDao workerDao) {
@@ -18,6 +20,8 @@ public class WorkerServiceImpl implements WorkerService{
 	@Override
 	public void addWorker(Worker worker) {
 		workerDao.insertWorker(worker);
+		
+		
 	}
 	
 	@Override

@@ -3,27 +3,35 @@ package com.my.hr.dao;
 import com.my.hr.domain.Worker;
 
 public class WorkerDaoImpl implements WorkerDao{
-	private Worker worker;
+	private Worker workers;
+	
+	public WorkerDaoImpl(Worker workers) {
+		this.workers = workers;
+	}
 	
 	@Override
 	public Worker selectWorker() {
-		return this.worker;
+		return this.workers;
 	}
 	
 	@Override
 	public void insertWorker(Worker worker) {
-		this.worker = worker;
+		this.workers = worker;
 	}
 	
 	@Override
 	public void updateWorker(String workerName, String hiredDate) {
-		this.worker.setWorkerName(workerName);
-		this.worker.setHiredDate(hiredDate);
+		this.workers.setWorkerName(workerName);
+		this.workers.setHiredDate(hiredDate);
 	}
 	
 	@Override
 	public void deleteWorker() {
-		this.worker = null;
+		this.workers = null;
 	}
 	
+	@Override
+	public void listWorker() {
+		this.workers = workers;
+	}
 }

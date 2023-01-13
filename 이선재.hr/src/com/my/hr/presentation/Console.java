@@ -4,15 +4,9 @@ import java.util.Scanner;
 
 public interface Console {
 	Scanner sc = new Scanner(System.in);
+		
 	
-	int WORKER_LIST = 1;
-	int WORKER_ADD = 2;
-	int WORKER_FIX = 3;
-	int WORKER_DEL = 4;
-	int WORKER_EXIT = 5;
-	
-	
-	private static void inMsg(String msg) {
+	public static void inMsg(String msg) {
 		System.out.print(msg + " : ");
 	}
 	
@@ -29,6 +23,9 @@ public interface Console {
 		return input;
 	}
 	
+	public static void info(Object obj) {
+		System.out.println(obj);
+	}
 	public static void err(String msg) {
 		System.out.print("ERROR]" + msg);
 	}

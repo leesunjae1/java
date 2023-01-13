@@ -1,5 +1,7 @@
 package com.my.hr.service;
 
+import java.util.List;
+
 import com.my.hr.domain.Worker;
 
 public interface WorkerService {

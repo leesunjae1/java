@@ -5,6 +5,7 @@ import com.my.hr.domain.Worker;
 public interface WorkerDao {
 	public Worker selectWorker();
 	public void insertWorker(Worker worker);
-	public void updateWorker(String workName, String hiredDate);
+	public void updateWorker(String workerName, String hiredDate);
 	public void deleteWorker();
+	public void listWorker();
 }

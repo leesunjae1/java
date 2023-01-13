@@ -38,6 +38,4 @@ public class Worker {
 	public String toString() {
 		return String.format("%s %s", workerName, hiredDate);
 	}
-	
-	
 }
