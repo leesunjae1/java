@@ -5,5 +5,7 @@ import java.util.List;
 import ch03.domain.User;
 
 public interface Map {
-	List<User> selectUser();
+	List<User> selectUsers();
+
+	
 }

@@ -8,4 +8,15 @@
 		on users.user_id = addresses.user_id
 		order by user_id   
 	</select>
+	
+	<resultMap id='userMap' type='myUser'>
+		<id property='userId' column= 'user_id'/>
+		<result property='userName' column='user_name'/>
+		<result property='regDate' column='reg_date'/>
+		<association property='address' resultMap='addressMap'/>
+	</resultMap>
+	
+	<resultMap id='addressMap' type='address'>
+		<result property='address' column='address'/>
+	</resultMap>
 </mapper>	 

@@ -6,7 +6,7 @@
 		insert into users values(
 			#{userId, jdbcType=NUMERIC},
 			#{userName, jdbcType=VARCHAR},
-			#{regDate}, jdbcType=DATE})
+			#{regDate, jdbcType=DATE})
 	</insert>
 	
 	<insert id='insertUser2'>

@@ -5,7 +5,7 @@
 	<select id='selectUser' resultMap='userMap'>
 		select user_id, user_name, reg_date
 		from users
-		where user_id = #{userId}
+		where user_id = #{userId} <!-- 파라미터는 #{}로 표현-->
 	</select>
 	
 	<select id='selectUser2' resultMap='userMap'>

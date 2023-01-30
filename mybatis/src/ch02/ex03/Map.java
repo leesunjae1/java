@@ -7,7 +7,7 @@ import org.apache.ibatis.annotations.Param;
 import ch02.domain.User;
 
 public interface Map {
-	int insertUser(User user);
+	int insertUser(User user); 
 	
 	int insertUser2(@Param("userId") int userId,
 			@Param("userName")String userName,

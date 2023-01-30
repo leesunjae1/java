@@ -12,20 +12,7 @@ public class User {
 		this.userName = userName;
 		this.regDate = regDate;		
 	}
-	/*
-	public void setUserId(int userId) {
-		this.userId = userId;
-	}
-	
-	public void setUserName(String userName) {
-		this.userName = userName;
 
-	}
-	
-	public void setRegDate(LocalDate regDate) {
-		this.regDate = regDate;
-	}
-	*/
 	@Override
 	public String toString() {
 		return String.format("%d %s %s", userId, userName, regDate);
