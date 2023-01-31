@@ -1,4 +1,4 @@
-package work1.presentation;
+package presentation;
 
 import java.time.LocalDate;
 import java.time.format.DateTimeFormatter;
@@ -13,7 +13,7 @@ public interface Console {
 	}
 	
 	static void err(String msg) {
-		System.out.println("err" + msg);
+		System.out.println("ERROR]" + msg);
 	}
 	
 	private static void inMsg(String msg) {
@@ -22,28 +22,28 @@ public interface Console {
 	
 	static String inStr(String msg, int len) {
 		String input = "";
-		boolean isgood = false;
+		boolean isGood = false;
 		
 		do {
 			Console.inMsg(msg);
 			input = sc.nextLine();
-			isgood = input.matches("[a-zA-Z가-힣0-9{"+len+"}]");
-			if(!isgood) Console.err(len + "자 이하의 문자가 아닙니다");
-		}while(!isgood);
+			isGood = input.matches("[a-zA-Z가-힣0-9 {1," + len + "}] +5");
+			if(!isGood) Console.err(len + "자 이하의 문자가 아닙니다.");		
+		} while(!isGood);
 		
 		return input;
 	}
 	
 	static int inNum(String msg) {
 		String input = "";
-		boolean isgood = false;
+		boolean isGood = false;
 		
 		do {
 			Console.inMsg(msg);
 			input = sc.nextLine();
-			isgood = input.matches("[0-9]+");
-			if(!isgood) Console.err("0 이상의 정수가 아닙니다.");
-		}while (!isgood);
+			isGood = input.matches("[0-9]+");
+			if(!isGood) Console.err("0 이상의 정수가 아닙니다.");
+		} while (!isGood);
 		
 		return Integer.parseInt(input);
 	}
@@ -56,13 +56,15 @@ public interface Console {
 			Console.inMsg(msg);
 			input = sc.nextLine().trim();
 			
-			if(input.length() > 0 ) {
+			if(input.length() > 0) {
 				try {
 					date = LocalDate.parse(input, DateTimeFormatter.ISO_DATE);
 				} catch(DateTimeParseException e) {}
 			}
-			if(date == null) Console.err("YYYY-MM-DD 형식으로 쓰세요");
-		} while (date ==null);
+			
+			if(date == null) Console.err("YYYY-MM-DD 형식의 실제 날짜가 아닙니다.");
+			
+		} while(date == null);
 		
 		return date;
 	}

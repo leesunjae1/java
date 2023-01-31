@@ -1,9 +1,10 @@
-package work1.presentation;
+package presentation;
 
 public enum Job {
 	EXIT("종료"), LIST("목록"), ADD("추가"), FIX("수정"), DEL("삭제");
-	
+	//중복제거를 위해 객체지향을 포기했다
 	private String label;
+	
 	private Job(String label) {
 		this.label = label;
 	}
@@ -22,10 +23,11 @@ public enum Job {
 		String last = "";
 		
 		for(Job job : jobs) {
-			if(job.ordinal() == 0) last = job.ordinal() +"." +job.label;
+			if(job.ordinal() == 0) last = job.ordinal() + "." + job.label;
 			else labels += job.ordinal() + "." + job.label + ",";
 		}
 		labels += last;
+		
 		return labels;
 	}
 }

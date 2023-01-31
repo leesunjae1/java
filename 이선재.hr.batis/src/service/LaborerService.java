@@ -1,13 +1,13 @@
-package work1.service;
+package service;
 
 import java.time.LocalDate;
 import java.util.List;
 
-import work1.domain.Laborer;
+import com.my.hr.domain.Laborer;
 
 public interface LaborerService {
 	List<Laborer> getLaborers();
-	void addLaborer(String LaborerName, LocalDate hireDate);
+	void addLaborer(String laborerName, LocalDate hireDate);
 	void fixLaborer(Laborer laborer);
 	void delLaborer(int laborerId);
 }

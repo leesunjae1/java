@@ -1,13 +1,13 @@
-package work3.service;
+package service;
 
 import java.time.LocalDate;
 import java.util.List;
 
-import work3.dao.LaborerDao;
-import work3.domain.Laborer;
-import work3.domain.NoneException;
+import com.my.hr.dao.LaborerDao;
+import com.my.hr.domain.Laborer;
+import com.my.hr.domain.NoneException;
 
-public class LaborerServiceImpl implements LaborerService {
+public class LaborerServiceImpl implements LaborerService{
 	private LaborerDao laborerDao;
 	
 	public LaborerServiceImpl(LaborerDao laborerDao) {
@@ -26,7 +26,11 @@ public class LaborerServiceImpl implements LaborerService {
 	
 	@Override
 	public void fixLaborer(Laborer laborer) throws NoneException {
-		laborerDao.deleteLaborer(laborerId);
+		laborerDao.updateLaborer(laborer);
+	}
 	
+	@Override
+	public void delLaborer(int laborerId) throws NoneException {
+		laborerDao.deleteLaborer(laborerId);
 	}
 }
