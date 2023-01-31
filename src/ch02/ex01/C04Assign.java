@@ -15,4 +15,4 @@ public class C04Assign {
 		double d = Math.random();
 		System.out.printf("%,2f", d);
 	}
-}
+} 

@@ -10,7 +10,7 @@ public enum Job {
 	}
 	
 	public static int length() {
-		return values(). length;
+		return values().length;
 	}
 	
 	public static Job valueOf(int ordinal) {

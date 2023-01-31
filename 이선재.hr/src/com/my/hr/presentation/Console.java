@@ -27,7 +27,7 @@ public interface Console {
 		do {
 			Console.inMsg(msg);
 			input = sc.nextLine();
-			isGood = input.matches("[a-zA-Z가-힣0-9 {1," + len + "}] + 5");
+			isGood = input.matches("[a-zA-Z가-힣0-9 {1," + len + "}] +5");
 			if(!isGood) Console.err(len + "자 이하의 문자가 아닙니다.");		
 		} while(!isGood);
 		

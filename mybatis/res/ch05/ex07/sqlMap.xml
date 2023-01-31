@@ -4,18 +4,18 @@
 <mapper namespace='ch05.ex07.Map'>
 	<select id='selectUsers' resultMap='userMap'>
 		<include refid='selectUser'/>
-		where user_id in
-				<foreach item='userId' collection='array' open='(' separator=',' close=')'>
-					#{userId}
-				</foreach>
+			where user_id in
+					<foreach item='userId' collection='array' open='(' separator=',' close=')'>
+						#{userId}
+					</foreach>
 	</select>
 	
 	<select id='selectUsers2' resultMap='userMap'>
 		<include refid='selectUser'/>
-		where user_id in
-				<foreach item='userName' collection='array' open='(' separator=',' close=')'>
-					#{userName}
-				</foreach>
+			where user_id in
+					<foreach item='userName' collection='array' open='(' separator=',' close=')'>
+						#{userName}
+					</foreach>
 	</select>
 	
 	<resultMap id='userMap' type='ch05.domain.User'>
