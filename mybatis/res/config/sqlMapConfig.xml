@@ -2,13 +2,13 @@
 <!DOCTYPE configuration PUBLIC './/mybatis.org//DTD config 3.0//EN'
 	'http://mybatis.org/dtd/mybatis-3-config.dtd'>
 <configuration>
- <!--  
+  
 	<properties resource='config/jdbc.properties'>
 		<property name ='driver' value='oracle.jdbc.driver.OracleDriver'/>
 	</properties>
--->  	
-	<properties resource='config/hr2.properties'/>
-
+ <!--   	
+	<properties resource='mybatis/config/hr2.properties'/>
+ -->
 	<settings>
 		<setting name='cacheEnabled' value='false'/>
 		<setting name='localCacheScope' value='STATEMENT'/>
@@ -30,7 +30,7 @@
 			</dataSource>
 		</environment>
 		
-		<environment id='hr'>
+		<environment id='hr2'>
 			<transactionManager type='JDBC'/>
 			<dataSource type='POOLED'>
 				<property name='driver' value='${driver}'/>
@@ -63,7 +63,6 @@
 	    <mapper class='ch07.ex02.Map'/>
 	    <mapper class='ch07.ex03.Map'/>
 	    <mapper class='ch07.ex04.Map'/>
-	    <mapper class='ch07.ex05.Map'/>
-	    <mapper resource='이선재.hr.batis/dao/map/LaboMap.xml'/> 
+	    <mapper class='ch07.ex05.Map'/> 
 	</mappers>
 </configuration>		

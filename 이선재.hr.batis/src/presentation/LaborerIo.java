@@ -3,9 +3,9 @@ package presentation;
 import java.time.LocalDate;
 import java.util.List;
 
-import com.my.hr.domain.Laborer;
-import com.my.hr.domain.NoneException;
-import com.my.hr.service.LaborerService;
+import domain.Laborer;
+import domain.NoneException;
+import service.LaborerService;
 
 public class LaborerIo {
 	private LaborerService laborerService;
@@ -68,7 +68,7 @@ public class LaborerIo {
 		int laborerId = Console.inNum("노동자ID를 입력하세요.");
 		
 		if(laborerId != 0) {
-			String laborerName = Console.inStr("노동자명을 입력하세요.", laborerId);
+			String laborerName = Console.inStr("노동자명을 입력하세요.", 5);
 			LocalDate hireDate = Console.inDate("입사일을 입력하세요.");
 			
 			try {

@@ -3,7 +3,7 @@ package service;
 import java.time.LocalDate;
 import java.util.List;
 
-import com.my.hr.domain.Laborer;
+import domain.Laborer;
 
 public interface LaborerService {
 	List<Laborer> getLaborers();

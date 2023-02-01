@@ -68,7 +68,7 @@ public class LaborerIo {
 		int laborerId = Console.inNum("노동자ID를 입력하세요.");
 		
 		if(laborerId != 0) {
-			String laborerName = Console.inStr("노동자명을 입력하세요.", laborerId);
+			String laborerName = Console.inStr("노동자명을 입력하세요.", 5);
 			LocalDate hireDate = Console.inDate("입사일을 입력하세요.");
 			
 			try {
