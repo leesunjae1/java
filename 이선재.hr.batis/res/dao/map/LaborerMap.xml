@@ -8,11 +8,12 @@
 		order by laborerId
 	</select>
 	
-	<insert id='insertLaborer'  useGeneratedKeys='true' keyProperty='laborerId'>
-		insert into laborers values (
-			#{laborerName},
-			#{hireDate})
-				
+	<insert id='insertLaborer' useGeneratedKeys='true' keyProperty="laborerId">
+		
+		insert into laborers(laborer_name, hire_date) 
+			values(
+				#{param1},
+				#{param2})		
 	</insert>
 	
 	<update id='updateLaborer'>
@@ -26,4 +27,8 @@
 		where laborer_id >= #{laborerId}
 	</delete>
 	
+	<sql id='selectLaborers'>
+		select laborer_id laborerId, laborer_name laborerName, hire_date hireDate
+		from laborers
+	</sql>
 </mapper>	
