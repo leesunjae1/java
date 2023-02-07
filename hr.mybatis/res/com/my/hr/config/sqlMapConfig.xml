@@ -10,7 +10,7 @@
 	</settings>
 		
 	<typeAliases>
-		<typeAlias type='com.my.hr.domain'/>
+		<typeAlias type='com.my.hr.domain.Laborer'/>
 	</typeAliases>
 	
 	<environments default='hr2'>

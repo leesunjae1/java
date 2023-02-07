@@ -2,17 +2,19 @@
 <!DOCTYPE configuration PUBLIC './/mybatis.org//DTD config 3.0//EN'
 	'http://mybatis.org/dtd/mybatis-3-config.dtd'>
 <configuration>
-	<properties resource='config/jdbc.properties'>
-		<property name='driver' value='oracle.jdbc.driver.OracleDriver'/>
-	</properties>
+	<properties resource='config/jdbc.properties'/>
+	
+	<settings>
+		<setting name='cacheEnabled' value='false'/>
+		<setting name='lacalCacheScope' value='STATEMENT'/>
+	</settings>
 	
 	<typeAliases>
-		<typeAlias type='ch02.domaim.User' alias='user'/>
-		<package name='ch03.domain'/>
+		<typeAlias type='hr.mybatis.domaim.Laborer' alias='laborer'/>
 	</typeAliases>
 	
-	<environments default= 'development'>
-		<environment id='development'>
+	<environments default= 'hr2'>
+		<environment id='hr2'>
 			<transactionManager type='JDBC'/>
 			<dataSource type='POOLED'> 
 				<property name='driver' value='${driver}'/>
@@ -24,14 +26,7 @@
 	</environments>
 	
 	<mappers>
-		<mapper resource='ch02/ex01/sqlMap.xml'/>
-		<mapper resource='ch02/ex02/sqlMap.xml'/>
-		<mapper resource='ch02/ex03/sqlMap.xml'/>
-		<mapper resource='ch02/ex04/sqlMap.xml'/>
-		<mapper resource='ch02/ex05/sqlMap.xml'/>
-		<mapper resource='ch03/ex01/sqlMap.xml'/>
-		<mapper resource='ch03/ex02/sqlMap.xml'/>
-		<mapper resource='ch04/ex01/sqlMap.xml'/>
-		<mapper resource='ch04/ex02/sqlMap.xml'/>
+		<mapper resource='dao/map/LaborerMap.xml'/>
+		
 	</mappers>
 </configuration>	
