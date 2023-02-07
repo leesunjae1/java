@@ -1,7 +1,7 @@
 <?xml version='1.0' encoding='utf-8' ?>
 <!DOCTYPE mapper PUBLIC './/mybatis.org//DTD Mapper 3.0//EN'
 	'http://mybatis.org/dtd/mybatis-3-mapper.dtd'>
-<mapper namespace='hr.mybatis.dao.map.LaborerMap'>
+<mapper namespace='dao.map.LaborerMap'>
 	<select id='selectLaborers' resultMap='laborerMap'>
 		select laborer_id, laborer_name, hire_date
 		from laborers
@@ -9,7 +9,7 @@
 	</select>
 	
 	<resultMap id='laborerMap' type='Laborer'>
-		<id property='laborerId' column='laborer_id'/>
+		<id property='laborerId' column='labrer_id'/>
 		<result property='laborerName' column='laborer_name'/>
 		<result property='hireDate' column='hire_date'/>
 	</resultMap>
