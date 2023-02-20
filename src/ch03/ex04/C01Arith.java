@@ -10,6 +10,7 @@ public class C01Arith {
 		System.out.println(c);
 		
 		c++; // c = c(byte) + 1(int);
+		
 		System.out.println(c);
 		
 		double d = a / b;

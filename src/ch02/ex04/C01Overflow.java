@@ -3,7 +3,7 @@ package ch02.ex04;
 public class C01Overflow {
 	public static void main(String[] args) {
 		byte b = 10;
-		int i =b;
+		int i = b;
 		i = (int)b;
 		System.out.println(i);
 		
