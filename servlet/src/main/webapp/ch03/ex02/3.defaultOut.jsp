@@ -11,7 +11,6 @@
 	String date2 = request.getParameter("date2");
 	String checkbox2 = request.getParameter("checkbox2");
 	String radio2 = request.getParameter("radio2");
-
 %>
 
 <%= text %> <%= text2 %><br>
@@ -21,4 +20,7 @@
 <%= radio %> <%= radio2 %>
 
 
-<%-- checkbox,radio 기본값이 없어서 null이 출력된다--%>
+<%-- 
+checkbox,radio 기본값이 없어서 null이 출력된다
+checkbox,radio 파라미터로 쓰고싶으면 checked를 이용한다
+--%>
