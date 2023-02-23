@@ -4,4 +4,3 @@
 	<a href='5.sessionB.jsp'>B</a>&nbsp;
 	<a href='5.logout.jsp'>logout</a>
 </nav>
-
