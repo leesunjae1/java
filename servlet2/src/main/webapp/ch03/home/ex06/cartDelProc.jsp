@@ -6,22 +6,22 @@
 	Object cartObj = session.getAttribute("cart");
 	
 	if(cartObj != null) {
-		List<String> cart = (List<String>)cartObj;
+		List<String> cart = (List<String>) cartObj;
 		
 		if(products != null && products.length > 0) {
 			for(String product: products)
 				cart.remove(product);
 		} else {
 %>
-			<c:set var='msg' value='장바구니에서 뺄 물건을 선택하세요.'/>			
-<% 	
+			<c:set var='msg' value='장바구니에서 뺄 물건이 없습니다.'/>
+<%
 		}
 	} else {
-%>
-			<c:set var='msg' value='장바구니가 없습니다.'/>
+%>		
+			<c:set var='msg' value='장바구니가 없습니다.'/>	
 <%
 	}
-%>		
+%>	
 <c:redirect url='cartOut.jsp'>
 	<c:param name='msg' value='${msg}'/>
-</c:redirect>	
+</c:redirect>			
