@@ -1,19 +1,13 @@
-<!DOCTYPE html>
+<%@ page language='java' contentType='text/html; charset=utf-8' pageEncoding='utf-8'%>
 <html>
 <head>
-<meta charset='utf-8'>
+<title>hr.bootstrap</title>
 <meta name='viewport' content='width=device-width, initial-scale=1'>
 <link href='https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/css/bootstrap.min.css' rel='stylesheet'>
 <link rel='stylesheet' href='https://cdn.jsdelivr.net/npm/bootstrap-icons@1.4.0/font/bootstrap-icons.css'>
 <script src='https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/js/bootstrap.bundle.min.js'></script>
 <script src='https://code.jquery.com/jquery-3.6.0.min.js'></script>
 <script>
-    let laborers = []
-    let laborerId = function* genLaborerId() {
-        let laborerId = 1
-        while(true) yield laborerId++
-    }()
-
     function isVal(field) {
         let isGood = false
         let errMsg
@@ -36,38 +30,49 @@
     function listLaborers() {
         $('input').not(':radio').val('')
         $('#laborers').empty()
-
-        if(laborers.length) {
-            const laborerArr = []
-
-            $.each(laborers, (i, laborer) => {
-                laborerArr.unshift(
-                     `<tr>
-                            <td><input type='radio' value='${laborer.laborerId}' id='laborerId' name='laborerId'/></td>
-                            <td>${laborer.laborerId}</td>
-                            <td>${laborer.laborerName}</td>
-                            <td>${laborer.hireDate}</td>   
-                      </tr>`   
-                )  
-            })
-
-            $('#laborers').append(laborerArr.join(''))
-        } else $('#laborers').append(
-            `<tr><td colspan='4' class='text-center'> 노동자가 없습니다.</td></tr>` )
+        
+        $.ajax({
+        	url: 'laborer/getLaborers.jsp',
+        	dataType: 'json',
+        	success: laborers => {
+		        if(laborers.length) {
+		            const laborerArr = []
+		
+		            $.each(laborers, (i, laborer) => {
+		                laborerArr.unshift(
+		                     `<tr>
+		                            <td><input type='radio' value='\${laborer.laborerId}' id='laborerId' name='laborerId'/></td>
+		                            <td>\${laborer.laborerId}</td> 
+		                            <td>\${laborer.laborerName}</td>
+		                            <td>\${laborer.hireDate}</td>   
+		                      </tr>`   
+		                )  
+		            })
+		
+		            $('#laborers').append(laborerArr.join(''))
+		        } else $('#laborers').append(
+		            `<tr><td colspan='4' class='text-center'> 노동자가 없습니다.</td></tr>` )
+           }       
+        })            
     }
 
     function init() {
+    	// 노동자 목록
+    	listLaborers()
+    	
         //노동자 추가
         $('#addLaborerBtn').click(() => {
             if(isVal($('#laborerName')) && isVal($('#hireDate'))) {
                 let laborer = {
-                    laborerId: laborerId.next().value,
                     laborerName: $('#laborerName').val(),
                     hireDate: $('#hireDate').val()
                 }
-
-                laborers.push(laborer)
-                listLaborers()
+                
+            	$.ajax({
+            		url: 'laborer/addLaborer.jsp',
+            		data: laborer,
+            		success: listLaborers
+            	})
             }
         })
 
@@ -75,17 +80,18 @@
         $('#fixLaborerBtn').click(() => {
             if(isVal($('#laborerId:checked')) &&
               isVal($('#laborerName')) && isVal($('#hireDate'))) { 
-              let laborerId = $('#laborerId:checked').val()
-              
-              let laborer = laborers.filter(laborer =>
-                laborer.laborerId == laborerId)[0]
-
-                if(laborer) {
-                    laborer.laborerName = $('#laborerName').val()
-                    laborer.hireDate = $('#hireDate').val()
-                    listLaborers()
-                }
-            } 
+             		let laborer = {
+             			laborerId: $('#laborerId:checked').val(),
+             			laborerName: $('#laborerName').val(),
+             			hireDate: $('#hireDate').val()
+             		}
+             		
+             		$.ajax({
+             			url: 'laborer/fixLaborer.jsp',
+             			data: laborer,
+             			success: listLaborers
+             		})
+                } 
         })
 
         $('#laborers').on({
@@ -105,12 +111,14 @@
         })
 
         $('#delLaborerOkBtn').click(() => {
-            let laborerId = $('#laborerId:checked').val()
-
-            laborers = laborers.filter(laborer => laborer.laborerId != laborerId)
+           $.ajax({
+        	   url: 'laborer/delLaborer.jsp',
+        	   data: {laborerId: $('#laborerId:checked').val()},
+        	   success: listLaborers
+           })
 
             $('#modal').modal('hide')
-            listLaborers()
+            
         })
     }
 
@@ -152,9 +160,9 @@
                                 <button type='button' class='btn btn-success' id='fixLaborerBtn'>
                                     <i class='bi bi-check-circle'></i><span class='label d-none d-md-inline'>&nbsp;수정</span>
                                 </button>
-                                <bytton type='button' class='btn btn-danger' id='delLaborerBtn'>
+                                <button type='button' class='btn btn-danger' id='delLaborerBtn'>
                                     <i class='bi bi-x-circle'></i><span class='label d-none d-md-inline'>&nbsp;삭제</span>
-                                </bytton>
+                                </button>
                             </div>
                         </div>
                     </div>

@@ -22,5 +22,3 @@ public class Configuration {
 		return sqlSessionFactory.openSession(true).getMapper(arg);
 	}
 }
-
-
